@@ -4,8 +4,7 @@ This the  SpringBoot web e-commerce application that integrates with a PostgreSQ
 
 # Getting Started
 
-* Download and extract the zip.
-* Go inside folder EcommerceApplication.
+* Download and extract the zip or clone from the repository.
 
 Execute following command to start the application:
 

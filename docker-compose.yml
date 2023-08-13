@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    container_name: ecomm_app
+#    build:
+#      context: ./
+#      target: dev
+    image: ecomm_app
+    depends_on:
+      - postgresqldb
+    ports:
+      - 8080:8080
+#    environment:
+#      DB_HOST: postgresqldb
+#      DB_PORT: 5432
+#      DB_USER: postgres
+#      DB_PASSWORD: postgres
+#      DB_NAME: postgres
+    links:
+      - postgresqldb
+    volumes:
+      - './:/src'
+  postgresqldb:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local

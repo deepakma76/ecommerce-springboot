@@ -1,5 +1,7 @@
 package com.ecommerce.project.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "orders")
 //@SecondaryTable(name = "orderitems", pkJoinColumns = @PrimaryKeyJoinColumn(name = "orderid"))
-public class Orders {
+public class Orders implements Serializable {
+
+	private static final long serialVersionUID = 4263643286284956077L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
